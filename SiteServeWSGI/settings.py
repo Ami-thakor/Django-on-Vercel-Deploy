@@ -25,13 +25,12 @@ SECRET_KEY = 'django-insecure-8!p=9wvwj1hbqas$o#ftiaant32v%(gr!nw)bkqnq64pdm^*h3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -136,11 +135,4 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
-
-JAZZMIN_SETTINGS = {
-	"site_title": "Karma-Master",
-	"site_brand": "Karma-Master",
-   	"site_logo": "favicons/apple-touch-icon.png",
-    "welcome_sign": "Karma-Master Admin Access Granted!",
-}
 
