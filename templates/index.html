@@ -1,16 +1,58 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django Deploy</title>
-</head>
-<body>
-    <br>
-    <br>
-    <br>
-    <center>
-        <h1 style="font-size: 7rem;">Welcome to First Django deployment on Vercel</h1>
-    </center>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monitor Dashboard</title>
+
+    <link rel="stylesheet" href="{% static "style.css" %}" />
+  
+  </head>
+  <body>
+    <main>
+      <div class="container left-side">
+       <div class="top">
+        <h2>Monitors</h2>
+       
+       </div>
+        <div class="items">
+
+          {% for item in monitors %}
+         
+
+          <div class="item {{ item.status|yesno:",down" }}">
+            <div class="left">
+           <img src="{% static item.status|yesno:'imgs/up.svg,imgs/down.svg' %}" alt="" />
+
+              <div>
+                <p class="web-title"><span>{{item.title}}</span>  | <small>
+                  <a href="{{item.url}}" target="_blank"
+                  style="color:{{ item.status|yesno:'green,red' }};">Open</a>
+                </small></p>
+                <p>{{ item.status|yesno:"Up,Down" }} for {{ item.uptime|timesince }} | {{item.status_code}}</p>
+              
+
+              </div>
+            </div>
+           
+          </div>
+
+          {% endfor %}
+         
+        </div>
+      </div>
+      <div class="container right-side">
+        <h3>Current Status</h3>
+        <div>
+          <p>Total: {{count}}</p>
+          <p style="color:#0fd508">Up: {{upcount}}</p>
+          <p style="color:#f80909">Down: {{downcount}}</p>
+        </div>
+      </div>
+
+    </main>
+
+   
+  </body>
 </html>
