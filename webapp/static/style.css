@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,body{
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #01000c;
+  color: #b4acac;
+  font-family: "Poppins", system-ui;
+}
+
+main {
+  display: flex;
+  width: 100vw;
+}
+
+.container {
+  margin: 50px auto;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 8px;
+}
+
+.left-side {
+  width: 70%;
+}
+.right-side {
+  width: 20%;
+}
+
+.items,
+.item {
+  margin: 20px 0;
+  background-color: #01000c;
+  padding: 10px;
+}
+
+.item {
+  display: flex;
+  border: 1px solid;
+  border-radius: 8px;
+  justify-content: space-between;
+}
+
+.item .web-title span {
+  color: #0fd508;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.down .web-title span {
+  color: #f80909 !important;
+}
+
+.item a {
+  font-size: 13px;
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 8px;
+  color: #fffdfd;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.left img {
+  width: 50px;
+}
+
+.left div {
+  margin-left: 20px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 0 20px;
+  margin-right: 10px;
+}
+
+.left-side .top{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 20px;
+}
+
+.left-side button {
+  color: #fffdfd;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.left-side button{
+  padding: 10px 15px;
+}
+
+.left-side .delete {
+  background-color: #f80909;
+}
+
+.left-side .delete:hover {
+  background-color: #cf2121;
+}
+
+.left-side .edit {
+  background-color: #0a6807;
+}
+
+.left-side .edit:hover {
+  background-color: #094307;
+}
+
+.right-side {
+  text-align: center;
+}
+
+.right-side div {
+  margin: 30px 0;
+}
+
+.right-side img {
+  width: 40px;
+}
+
+.right-side div p {
+  margin: 5px 20%;
+  display: flex;
+  align-items: center;
+}
+
+
+@media only screen and (max-width: 780px) {
+ main{
+  flex-direction: column-reverse;
+ }
+
+ .container{
+  width: 90%;
+ }
+}
+
+@media only screen and (max-width: 430px) {
+  .item .web-title span{
+    font-size: 15px;
+  }
+  
+.left img{
+  width: 30px;
+}
+ .left-side .top{
+  justify-content: center;
+ }
+}

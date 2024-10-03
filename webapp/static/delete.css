@@ -1,0 +1,83 @@
+
+/* Modal Container - Hidden by default */
+.modal, .form-container {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #1f2937;
+  color: #ded6d6;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 300px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Modal Heading */
+.modal h3 {
+  margin-bottom: 30px;
+}
+
+.modal p{
+   font-size: 14px;
+}
+
+/* Action Buttons */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Cancel Button */
+.btn-cancel {
+  background-color: #2d3748;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+
+}
+
+.modal button{
+    margin: 0 10px;
+    opacity: .8;
+}
+.modal button:hover{
+    opacity: 1;
+}
+
+/* Delete Button */
+.btn-delete {
+  background-color: #fe0000;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
