@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmation Modal</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Modal Container - Hidden by default */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Modal Content */
+    .modal-content {
+      background-color: #1f2937;
+      color: #ded6d6;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 300px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Close button */
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* Modal Heading */
+    .modal h3 {
+      margin-bottom: 30px;
+    }
+
+    .modal p{
+       font-size: 14px;
+    }
+
+    /* Action Buttons */
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    /* Cancel Button */
+    .btn-cancel {
+      background-color: #2d3748;
+      border: none;
+      padding: 10px 20px;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+
+    }
+
+    .modal button{
+        margin: 0 10px;
+        opacity: .8;
+    }
+    .modal button:hover{
+        opacity: 1;
+    }
+
+    /* Delete Button */
+    .btn-delete {
+      background-color: #fe0000;
+      border: none;
+      padding: 10px 20px;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+   
+  </style>
+</head>
+<body>
+
+  <!-- Trigger Button -->
+  <button id="openModal" style="padding: 10px 20px; cursor: pointer;">Delete Monitor</button>
+
+  <!-- Modal -->
+  <div id="deleteModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <!-- Add your own SVG here -->
+      <div class="icon">
+        <!-- SVG icon placeholder -->
+        <img src="imgs/delete.svg" alt="Trash Icon" width="40" height="40">
+      </div>
+      <h3>Are you sure?</h3>
+      <p>Do you really want to delete <strong>bcast.onrender.com</strong>?<br> This can't be undone.</p>
+      <div class="actions">
+        <button class="btn-cancel" id="cancel">Cancel</button>
+        <button class="btn-delete">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Get the modal and buttons
+    var modal = document.getElementById("deleteModal");
+    var openModalBtn = document.getElementById("openModal");
+    var closeModalBtn = document.getElementById("closeModal");
+    var cancelBtn = document.getElementById("cancel");
+
+    // Open modal on button click
+    openModalBtn.onclick = function() {
+      modal.style.display = "flex";
+    }
+
+    // Close modal on close button click or cancel button
+    closeModalBtn.onclick = function() {
+      modal.style.display = "none";
+    }
+    cancelBtn.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // Close modal when clicking outside the modal
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>

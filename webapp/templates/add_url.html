@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monitor Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- <main> -->
+      <div class="form-container">
+        <h2>Add New Monitor</h2>
+        <form action="/submit-monitor" method="POST">
+          <!-- Title Field -->
+          <div>
+            <label for="title">Monitor title</label>
+            <input type="text" id="title" name="title" required />
+          </div>
+
+          <!-- URL Field -->
+          <div>
+            <label for="url">URL to monitor</label>
+            <input type="url" id="url" name="url" required />
+          </div>
+
+          <!-- Minutes Field -->
+          <div>
+            <label for="minutes">Monitor interval</label>
+            <input type="number" id="minutes" name="minutes" min="1" required />
+          </div>
+
+          <!-- Submit Button -->
+          <div>
+            <button type="submit">Add Monitor</button>
+          </div>
+        </form>
+      </div>
+    <!-- </main> -->
+  </body>
+</html>
